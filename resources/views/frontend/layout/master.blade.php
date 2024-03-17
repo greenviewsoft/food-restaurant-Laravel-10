@@ -7,6 +7,7 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
     <title>Green Food || Restaurant </title>
     <link rel="icon" type="image/png" href="{{ asset('frontend/assets/images/favicon.png') }}">
+    {{-- <meta name="csrf-token" content="{{ csrf_token }}" /> --}}
 
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
@@ -120,7 +121,7 @@
     <script src="{{ asset('frontend/assets/js/toastr.min.js') }}"></script>
 
     <script>
-toastr.options.progressBar = true;
+        toastr.options.progressBar = true;
 
         // Check if there are any errors
         @if ($errors->any())
@@ -129,10 +130,16 @@ toastr.options.progressBar = true;
                 toastr.error("{{ $error }}");
             @endforeach
         @endif
+
+        $.ajaxSetup({
+            heders: {
+                'X-CSRF-Token': $('meta[name="csrf-token').attr('content')
+            }
+        });
     </script>
-    
 
 
+    @stack('scripts')
 </body>
 
 </html>

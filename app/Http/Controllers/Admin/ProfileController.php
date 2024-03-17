@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\User;
-use App\traits\FileUploadTrait;
+
 use Auth;
 use Hash;
 use Illuminate\Http\Request;
@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class ProfileController extends Controller
 {
 
-    use FileUploadTrait;
+ 
 
     public function AdminProfile()
     {

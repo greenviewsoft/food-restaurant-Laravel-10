@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\AdminDashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'],function(){
 
 
     Route::get('dashboard', [AdminDashboardController::class, 'Index'])->name('admin.dashboard');
+
+
+  // Slider Route 
+
+  Route::resource('slider', SliderController::class);
 
 });
 
