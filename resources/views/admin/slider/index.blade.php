@@ -61,11 +61,10 @@
                                     </td>
                                 </tr>
                                 @endforeach 
-        
+    
                             </tbody>
-        
                         </table>
-                
+
                     </form>     
                     </div>
                 </div>
